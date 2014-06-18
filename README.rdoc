@@ -1,0 +1,10 @@
+= espeo_additional_project_settings
+
+Dodatkowe pola w projekcie
+
+Każdy projekt w swoich Ustawieniach otrzyma nowe pola:
+- Data rozpoczęcia
+- Data zakończenia
+- Status projektu  (Planowany, Realizowany, W odbiorze, Zamknięty)  - najlepiej słownik definiowany
+- Rodzaj umowy   (Fixed price, Time material, Mixed) - najlepiej słownik definiowany
+- Ikonka dla projektu

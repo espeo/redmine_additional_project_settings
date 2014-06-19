@@ -1,6 +1,6 @@
 class AddEspeoProjectCustomFields < ActiveRecord::Migration
   def self.up
-    Espeo::CustomFields.create_required_custom_fields!
+    Espeo::CustomFields.create_defaults!
   end
 
   def self.down

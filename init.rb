@@ -1,3 +1,5 @@
+require 'models/project_patch'
+
 Redmine::Plugin.register :espeo_additional_project_settings do
   name 'Espeo Additional Project Settings plugin'
   author 'espeo@jtom.me'

@@ -23,7 +23,7 @@ module ProjectPatch2
     def custom_end_date
       @custom_end_date ||= begin
         date_value = CustomValue.where(
-          custom_field_id: Espeo::CustomFields::DEFAULTS[:project_start_date][:id], 
+          custom_field_id: Espeo::CustomFields::DEFAULTS[:project_end_date][:id], 
           customized_id: self.id, 
           customized_type: self.class.name
         ).pluck(:value).first

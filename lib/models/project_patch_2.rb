@@ -16,7 +16,7 @@ module ProjectPatch2
           customized_id: self.id, 
           customized_type: self.class.name
         ).pluck(:value).first
-        Date.parse(date_value) if date_value
+        Date.parse(date_value) if date_value.present?
       end
     end
 
@@ -27,7 +27,7 @@ module ProjectPatch2
           customized_id: self.id, 
           customized_type: self.class.name
         ).pluck(:value).first
-        Date.parse(date_value) if date_value
+        Date.parse(date_value) if date_value.present?
       end
     end
   end

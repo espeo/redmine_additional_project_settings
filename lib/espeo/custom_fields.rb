@@ -40,9 +40,18 @@ module Espeo
     }
 
     def self.create_defaults!
-      # We use :without_protectionto save models with given primary ID
-      # (see http://stackoverflow.com/questions/431617/overriding-id-on-create-in-activerecord for more info)
-      ProjectCustomField.create!(DEFAULTS.values, :without_protection => true)
+      ProjectCustomField.transaction do
+        DEFAULTS.values.map do |field_data|
+          if field = ProjectCustomField.find(field_data[:id])
+            field.attributes = field_data.except(:id)
+            field.save!
+          else
+            # We use :without_protectionto save models with given primary ID
+            # (see http://stackoverflow.com/questions/431617/overriding-id-on-create-in-activerecord for more info)
+            field = ProjectCustomField.create!(field_data, :without_protection => true)
+          end
+        end
+      end
     end
   end
 end

@@ -1,13 +1,13 @@
 pl:
-  project_start_date: Data rozpoczęcia
-  project_end_date: Data zakończenia
-  project_status: Status
+  project_start_date: Data rozpoczęcia projektu
+  project_end_date: Data zakończenia projektu
+  project_status: Status projektu
   project_status_planned: Planowany
   project_status_during: Realizowany
   project_status_done: W odbiorze
   project_status_closed: Zamknięty
-  project_deal_type: Sposób rozliczenia
+  project_deal_type: Sposób rozliczenia projektu
   deal_type_fixed_price: Ustalona kwota
   deal_type_time_material: Godzinowo
   deal_type_mixed: Mieszany
-  project_image: Ikona
+  project_image: Ikona projektu

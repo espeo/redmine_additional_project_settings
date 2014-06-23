@@ -1,13 +1,13 @@
 en:
-  project_start_date: Start date
-  project_end_date: End date
-  project_status: Status
+  project_start_date: Project's start date
+  project_end_date: Project's end date
+  project_status: Project's status
   project_status_planned: Planned
   project_status_during: During
   project_status_done: Done
   project_status_closed: Closed
-  project_deal_type: Deal type
+  project_deal_type: Project's deal type
   deal_type_fixed_price: Fixed price
   deal_type_time_material: Time material
   deal_type_mixed: Mixed
-  project_image: Icon
+  project_image: Project's icon

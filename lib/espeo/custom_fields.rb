@@ -42,7 +42,7 @@ module Espeo
     def self.create_defaults!
       ProjectCustomField.transaction do
         DEFAULTS.values.map do |field_data|
-          if field = ProjectCustomField.find(field_data[:id])
+          if field = ProjectCustomField.where(id: field_data[:id]).first
             field.attributes = field_data.except(:id)
             field.save!
           else

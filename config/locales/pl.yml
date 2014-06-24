@@ -9,5 +9,5 @@ pl:
   project_deal_type: Sposób rozliczenia projektu
   deal_type_fixed_price: Ustalona kwota
   deal_type_time_material: Godzinowo
-  deal_type_mixed: Mieszany
+  deal_type_mixed: Mix
   project_image: Ikona projektu

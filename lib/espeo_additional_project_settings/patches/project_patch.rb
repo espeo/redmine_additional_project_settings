@@ -2,16 +2,20 @@ module EspeoAdditionalProjectSettings::Patches::ProjectPatch
   def self.included(base)
     base.extend         ClassMethods
     base.send :include, InstanceMethods
+
+    base.class_eval do
+      safe_attributes "custom_start_date", "custom_end_date"
+    end
   end
 
   module ClassMethods
   end
   
   module InstanceMethods
-    def custom_start_date
-      @custom_start_date ||= begin
+    def legacy_start_date
+      @legacy_start_date ||= begin
         date_value = CustomValue.where(
-          custom_field_id: Espeo::CustomFields::DEFAULTS[:project_start_date][:id], 
+          custom_field_id: EspeoAdditionalProjectSettings::CustomFields::DEFAULTS[:project_start_date][:id], 
           customized_id: self.id, 
           customized_type: self.class.name
         ).pluck(:value).first
@@ -19,10 +23,10 @@ module EspeoAdditionalProjectSettings::Patches::ProjectPatch
       end
     end
 
-    def custom_end_date
-      @custom_end_date ||= begin
+    def legacy_end_date
+      @legacy_end_date ||= begin
         date_value = CustomValue.where(
-          custom_field_id: Espeo::CustomFields::DEFAULTS[:project_end_date][:id], 
+          custom_field_id: EspeoAdditionalProjectSettings::CustomFields::DEFAULTS[:project_end_date][:id], 
           customized_id: self.id, 
           customized_type: self.class.name
         ).pluck(:value).first

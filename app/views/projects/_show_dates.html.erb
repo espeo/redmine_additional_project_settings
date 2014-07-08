@@ -1,0 +1,9 @@
+<ul>
+  <% if project.custom_start_date %>
+  <li><%= t(:project_start_date) %>: <%= project.custom_start_date %></li>
+  <% end %>
+
+  <% if project.custom_end_date %>
+  <li><%= t(:project_end_date) %>: <%= project.custom_end_date %></li>
+  <% end %>
+</ul>

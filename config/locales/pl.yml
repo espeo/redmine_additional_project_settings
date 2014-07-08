@@ -1,6 +1,8 @@
 pl:
   project_start_date: Data rozpoczęcia projektu
   project_end_date: Data zakończenia projektu
+  field_custom_start_date: &project_start_date
+  field_custom_end_date: &project_end_date
   project_status: Status projektu
   project_status_planned: Planowany
   project_status_during: Realizowany

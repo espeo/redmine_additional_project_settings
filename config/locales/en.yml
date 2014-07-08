@@ -1,6 +1,8 @@
 en:
   project_start_date: Project's start date
   project_end_date: Project's end date
+  field_custom_start_date: &project_start_date
+  field_custom_end_date: &project_end_date
   project_status: Project's status
   project_status_planned: Planned
   project_status_during: During

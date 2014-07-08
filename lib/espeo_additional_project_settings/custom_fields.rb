@@ -47,7 +47,7 @@ module EspeoAdditionalProjectSettings
             field.attributes = field_data.except(:id)
             field.save!
           else
-            # We use :without_protectionto save models with given primary ID
+            # We use :without_protection to save models with given primary ID
             # (see http://stackoverflow.com/questions/431617/overriding-id-on-create-in-activerecord for more info)
             field = ProjectCustomField.create!(field_data, :without_protection => true)
           end

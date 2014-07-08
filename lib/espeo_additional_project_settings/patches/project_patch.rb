@@ -1,11 +1,10 @@
-module ProjectPatch2
+module EspeoAdditionalProjectSettings::Patches::ProjectPatch
   def self.included(base)
     base.extend         ClassMethods
     base.send :include, InstanceMethods
   end
 
   module ClassMethods
-    
   end
   
   module InstanceMethods
@@ -34,5 +33,5 @@ module ProjectPatch2
 end
 
 Rails.application.config.to_prepare do
-  Project.send :include, ProjectPatch2
+  Project.send :include, EspeoAdditionalProjectSettings::Patches::ProjectPatch
 end

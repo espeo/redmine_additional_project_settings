@@ -1,4 +1,4 @@
-require 'models/project_patch_2'
+require 'espeo_additional_project_settings/patches/project_patch'
 
 Redmine::Plugin.register :espeo_additional_project_settings do
   name 'Espeo Additional Project Settings plugin'

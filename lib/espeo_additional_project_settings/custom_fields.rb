@@ -1,4 +1,5 @@
-module Espeo
+module EspeoAdditionalProjectSettings
+
   module CustomFields
     DEFAULTS = {
       project_start_date: {
@@ -54,4 +55,5 @@ module Espeo
       end
     end
   end
+  
 end

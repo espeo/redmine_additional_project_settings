@@ -12,26 +12,37 @@ module EspeoAdditionalProjectSettings::Patches::ProjectPatch
   end
   
   module InstanceMethods
-    def legacy_start_date
-      @legacy_start_date ||= begin
-        date_value = CustomValue.where(
-          custom_field_id: EspeoAdditionalProjectSettings::CustomFields::DEFAULTS[:project_start_date][:id], 
-          customized_id: self.id, 
-          customized_type: self.class.name
-        ).pluck(:value).first
-        Date.parse(date_value) if date_value.present?
+    def get_custom_value(custom_field_key)
+      custom_field_values.find do |value|
+        value.custom_field_id == EspeoAdditionalProjectSettings::CustomFields::DEFAULTS[custom_field_key][:id]
       end
     end
 
+    def legacy_start_date
+      value = get_custom_value(:project_start_date)
+      Date.parse(value.value) if value.present?
+    end
+
     def legacy_end_date
-      @legacy_end_date ||= begin
-        date_value = CustomValue.where(
-          custom_field_id: EspeoAdditionalProjectSettings::CustomFields::DEFAULTS[:project_end_date][:id], 
-          customized_id: self.id, 
-          customized_type: self.class.name
-        ).pluck(:value).first
-        Date.parse(date_value) if date_value.present?
+      value = get_custom_value(:project_end_date)
+      Date.parse(value.value) if value.present?
+    end
+
+    # Returns CustomFieldValue which stores the project's image.
+    def custom_image
+      get_custom_value(:project_image)
+    end
+
+    # Returns the ImageUploader for the project's image, if present.
+    def custom_image_uploader
+      if custom_image
+        @custom_image_uploader ||= Redmine::FieldFormat::ImageFormat.uploader_for(custom_image.custom_field, self, custom_image.value)
       end
+    end
+
+    # Is this project in the "PLANNED" status?
+    def espeo_planned?
+      false
     end
   end
 end

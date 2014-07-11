@@ -1,7 +1,7 @@
 class AddAdditionalProjectColumns < ActiveRecord::Migration
   def self.up
-    add_column :projects, :custom_start_date, :date
-    add_column :projects, :custom_end_date, :date
+    add_column :projects, :custom_start_date, :date unless column_exists? :projects, :custom_start_date
+    add_column :projects, :custom_end_date, :date unless column_exists? :projects, :custom_end_date
 
     Project.reset_column_information
     Project.find_each do |project|

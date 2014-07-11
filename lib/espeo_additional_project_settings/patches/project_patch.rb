@@ -22,12 +22,18 @@ module EspeoAdditionalProjectSettings::Patches::ProjectPatch
 
     def legacy_start_date
       value = get_custom_value(:project_start_date)
-      Date.parse(value.value) if value.present?
+      begin
+        Date.parse(value.value) if value.present?
+      rescue ArgumentError => e
+      end
     end
 
     def legacy_end_date
       value = get_custom_value(:project_end_date)
-      Date.parse(value.value) if value.present?
+      begin
+        Date.parse(value.value) if value.present?
+      rescue ArgumentError => e
+      end
     end
 
     # Returns CustomFieldValue which stores the project's image.

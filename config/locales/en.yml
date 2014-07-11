@@ -9,7 +9,7 @@ en:
   project_status_done: Done
   project_status_closed: Closed
   project_deal_type: Project's deal type
-  deal_type_fixed_price: Fixed price
-  deal_type_time_material: Time material
-  deal_type_mixed: Mixed
+  project_deal_type_fixed_price: Fixed price
+  project_deal_type_time_material: Time material
+  project_deal_type_mixed: Mixed
   project_image: Project's icon

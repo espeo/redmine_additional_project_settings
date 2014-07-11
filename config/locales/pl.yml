@@ -9,7 +9,7 @@ pl:
   project_status_done: W odbiorze
   project_status_closed: Zamknięty
   project_deal_type: Sposób rozliczenia projektu
-  deal_type_fixed_price: Ustalona kwota
-  deal_type_time_material: Godzinowo
-  deal_type_mixed: Mix
+  project_deal_type_fixed_price: Ustalona kwota
+  project_deal_type_time_material: Godzinowo
+  project_deal_type_mixed: Mix
   project_image: Ikona projektu

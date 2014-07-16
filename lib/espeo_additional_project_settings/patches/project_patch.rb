@@ -24,7 +24,7 @@ module EspeoAdditionalProjectSettings::Patches::ProjectPatch
       value = get_custom_value(:project_start_date)
       begin
         Date.parse(value.value) if value.present?
-      rescue ArgumentError => e
+      rescue
       end
     end
 
@@ -32,7 +32,7 @@ module EspeoAdditionalProjectSettings::Patches::ProjectPatch
       value = get_custom_value(:project_end_date)
       begin
         Date.parse(value.value) if value.present?
-      rescue ArgumentError => e
+      rescue
       end
     end
 

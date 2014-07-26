@@ -7,6 +7,8 @@ module EspeoAdditionalProjectSettings
     # :project
     # :form
     def view_projects_form(context = {})
+      # include_calendar_headers_tags
+
       context[:controller].send(:render_to_string, {
         :partial => "projects/form_dates",
         :locals => context

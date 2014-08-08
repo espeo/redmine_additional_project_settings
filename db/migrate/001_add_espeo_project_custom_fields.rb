@@ -4,6 +4,7 @@ class AddEspeoProjectCustomFields < ActiveRecord::Migration
   end
 
   def self.down
-    raise "Not implemented"
+    # Here we should delete all the created CustomFields ... 
+    # ... but let's skip it and just leave them in the database.
   end
 end

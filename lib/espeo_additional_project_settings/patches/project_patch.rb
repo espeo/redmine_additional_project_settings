@@ -20,6 +20,7 @@ module EspeoAdditionalProjectSettings::Patches::ProjectPatch
       end || (CustomFieldValue.new(custom_field: ProjectCustomField.find(custom_field_id)) if build_new)
     end
 
+    # DEPRECATED - will be deleted soon
     def legacy_start_date
       value = get_custom_value(:project_start_date)
       begin
@@ -28,6 +29,7 @@ module EspeoAdditionalProjectSettings::Patches::ProjectPatch
       end
     end
 
+    # DEPRECATED - will be deleted soon
     def legacy_end_date
       value = get_custom_value(:project_end_date)
       begin
